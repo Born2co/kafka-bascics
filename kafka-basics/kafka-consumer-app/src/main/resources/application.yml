@@ -1,0 +1,12 @@
+server: 
+ port: 8081
+spring: 
+  kafka: 
+    consumer: 
+      bootstrap-servers: "localhost:9092"
+      group-id: message-events-listener-group
+      key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    template: 
+      default-topic: message-topic
+  profiles: local
